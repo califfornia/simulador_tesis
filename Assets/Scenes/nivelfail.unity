@@ -615,7 +615,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a815ce7271666ac44a76d8794872f6a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  repetir: {fileID: 0}
+  repetir: {fileID: 1845501134}
   inpute: {fileID: 0}
   data:
     level: 0
