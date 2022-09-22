@@ -3,12 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using MongoDB.Driver;
+using MongoDB.Bson;
+
+
 
 public class TestSave : MonoBehaviour
 {
     /*public TextMeshProUGUI levelText;
     public TextMeshProUGUI expText;
     public Image imageColor;*/
+    //mongodb
+    private const string MONGO_URI = "mongodb+srv://LuisFeGomez:Simulador2022@cluster0.2jlef.mongodb.net/?retryWrites=true&w=majority";
+    private const string DATABASE_NAME = "Simulador";
+    private MongoClient client = new MongoClient(MONGO_URI);
+    private IMongoDatabase db;
+    private IMongoCollection<BsonDocument> collection;
+    //-------------
+
+
 	public Button repetir;
 	public InputField inpute;
 	private string input;
@@ -20,6 +33,13 @@ public class TestSave : MonoBehaviour
 
     private void Start()
     {
+        //-------------------
+        db = client.GetDatabase(DATABASE_NAME);
+        collection = db.GetCollection<BsonDocument>("intentos");
+
+        
+        //--------------
+
         var dataFound = SaveLoadSystemData.LoadData<ExampleData>(pathData, nameFileData);
         if (dataFound != null)
         {
@@ -29,7 +49,7 @@ public class TestSave : MonoBehaviour
         else
         {
             data = new ExampleData();
-            SaveData();
+            //SaveData();
         }
     }
 	
@@ -38,7 +58,8 @@ public class TestSave : MonoBehaviour
 		input = s;
 		Debug.Log (input);
 		data.username = input;
-		SaveData();
+        create();
+		//SaveData();
 	}
 	
 	public void LevelFail()
@@ -112,10 +133,21 @@ public class TestSave : MonoBehaviour
         }
     }*/
 
+    private void create(){
+        var document = new BsonDocument { { "username", data.username},{"FallosNivel1", 0},{"FallosNivel2", 0},{"FallosNivel3", 0},{"FallosNivel4", 0},{"FallosNivel5", 0}};
+        collection.InsertOne(document);
+    }
     private void SaveData()
     {
+        //var document = new BsonDocument { { "username", data.username ["username2", data.username]}};
         SaveLoadSystemData.SaveData(data, pathData, nameFileData);
+        //var json = new JavaScriptSerializer().Serialize(data);
+        //BsonDocument document = BsonDocument.Parse(datos);
+        var update = new BsonDocument { { "username", data.username},{"FallosNivel1", data.levelfail},{"FallosNivel2", data.levelfail2},{"FallosNivel3", data.levelfail3},{"FallosNivel4", data.levelfail4},{"FallosNivel5", data.levelfail5}};
+        var filU = "{username:{$eq:'" + data.username+"'}}";
+        collection.ReplaceOne(filU , update);
+        //db.collection.updateOne({username: data.username}, update);
     }
 
-//prueba
+
 }
