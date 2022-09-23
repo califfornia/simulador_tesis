@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -174,7 +174,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Enter text...
+  m_Text: Ingresa tu nombre
 --- !u!222 &95359245
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -358,7 +358,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 704113578}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalPosition: {x: 264, y: 151, z: -393}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -459,6 +459,7 @@ GameObject:
   - component: {fileID: 743515896}
   - component: {fileID: 743515895}
   - component: {fileID: 743515894}
+  - component: {fileID: 743515898}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -505,7 +506,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!223 &743515896
 Canvas:
   m_ObjectHideFlags: 0
@@ -515,7 +516,7 @@ Canvas:
   m_GameObject: {fileID: 743515893}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 2
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -536,7 +537,7 @@ RectTransform:
   m_GameObject: {fileID: 743515893}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1509914946}
   - {fileID: 739189218}
@@ -548,9 +549,22 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 269, y: 157.5}
+  m_SizeDelta: {x: 538, y: 315}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &743515898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 743515893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc51b22eba93f5b46bbd84d07f5b8cb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  campo: {fileID: 1228526038}
 --- !u!1 &1029437409
 GameObject:
   m_ObjectHideFlags: 0
@@ -689,6 +703,7 @@ GameObject:
   - component: {fileID: 1228526040}
   - component: {fileID: 1228526039}
   - component: {fileID: 1228526038}
+  - component: {fileID: 1228526042}
   m_Layer: 5
   m_Name: InputField
   m_TagString: Untagged
@@ -832,6 +847,35 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 23}
   m_SizeDelta: {x: 250, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1228526042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1228526037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 743515898}
+          m_TargetAssemblyTypeName: Keyboard, Assembly-CSharp
+          m_MethodName: OpenKeyboard
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1266449491
 GameObject:
   m_ObjectHideFlags: 0
@@ -1541,6 +1585,10 @@ MonoBehaviour:
     color: 
     username: 
     levelfail: 0
+    levelfail2: 0
+    levelfail3: 0
+    levelfail4: 0
+    levelfail5: 0
 --- !u!4 &1980382409
 Transform:
   m_ObjectHideFlags: 0
