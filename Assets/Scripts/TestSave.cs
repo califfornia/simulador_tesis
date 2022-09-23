@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -36,42 +36,56 @@ public class TestSave : MonoBehaviour
         //-------------------
         db = client.GetDatabase(DATABASE_NAME);
         collection = db.GetCollection<BsonDocument>("intentos");
-
-        
+    
         //--------------
-
         var dataFound = SaveLoadSystemData.LoadData<ExampleData>(pathData, nameFileData);
         if (dataFound != null)
         {
             data = dataFound;
-            //ChangeValues();
         }
         else
         {
             data = new ExampleData();
-            //SaveData();
+
+            SaveData();
         }
     }
+
 	
 	public void SaveUserName(string s)
 	{
 		input = s;
 		Debug.Log (input);
 		data.username = input;
-        create();
-		//SaveData();
+        var document = new BsonDocument { { "username",input},{"FallosNivel1", 0},{"FallosNivel2", 0},{"FallosNivel3", 0},{"FallosNivel4", 0},{"FallosNivel5", 0}};
+        collection.InsertOne(document);
+        //var filter = Builders<BsonDocument>.Filter.Eq("username", " ");
+        //var update = Builders<BsonDocument>.Update.Set("username", data.username);
+        //collection.UpdateOne(filter, update);
+
+        //
+		
+        SaveData();
 	}
 	
 	public void LevelFail()
-	{
+	{   
+
 		data.levelfail++;
+        var filter = Builders<BsonDocument>.Filter.Eq("username", data.username);
+        var update = Builders<BsonDocument>.Update.Set("FallosNivel1", data.levelfail);
+        collection.UpdateOne(filter, update);
 		Debug.Log("guardo");
+
 		SaveData();
 	}
 	
 	public void LevelFail2()
 	{
 		data.levelfail2++;
+        var filter = Builders<BsonDocument>.Filter.Eq("username", data.username);
+        var update = Builders<BsonDocument>.Update.Set("FallosNivel2", data.levelfail2);
+        collection.UpdateOne(filter, update);
 		Debug.Log("guardo");
 		SaveData();
 	}
@@ -79,6 +93,9 @@ public class TestSave : MonoBehaviour
 	public void LevelFail3()
 	{
 		data.levelfail3++;
+        var filter = Builders<BsonDocument>.Filter.Eq("username", data.username);
+        var update = Builders<BsonDocument>.Update.Set("FallosNivel3", data.levelfail3);
+        collection.UpdateOne(filter, update);
 		Debug.Log("guardo");
 		SaveData();
 	}
@@ -86,6 +103,9 @@ public class TestSave : MonoBehaviour
 	public void LevelFail4()
 	{
 		data.levelfail4++;
+        var filter = Builders<BsonDocument>.Filter.Eq("username", data.username);
+        var update = Builders<BsonDocument>.Update.Set("FallosNivel4", data.levelfail4);
+        collection.UpdateOne(filter, update);
 		Debug.Log("guardo");
 		SaveData();
 	}
@@ -93,60 +113,16 @@ public class TestSave : MonoBehaviour
 	public void LevelFail5()
 	{
 		data.levelfail5++;
+        var filter = Builders<BsonDocument>.Filter.Eq("username", data.username);
+        var update = Builders<BsonDocument>.Update.Set("FallosNivel5", data.levelfail5);
+        collection.UpdateOne(filter, update);
 		Debug.Log("guardo");
 		SaveData();
 	}
-
-    /*public void OnButtonChangeColor(string newColor)
-    {
-        data.color = newColor;
-        ChangeValues();
-        SaveData();
-    }
-    public void OnButtonGiveExp()
-    {
-        data.exp += 20;
-        if (data.exp >= 100)
-        {
-            data.exp = 0;
-            data.level++;
-        }
-        ChangeValues();
-        SaveData();
-    }
-
-    private void ChangeValues()
-    {
-        levelText.text = "Level : " + data.level;
-        expText.text = "Experience : " + data.exp;
-        if (data.color == "red")
-        {
-            imageColor.color = Color.red;
-        }
-        else if (data.color == "blue")
-        {
-            imageColor.color = Color.blue;
-        }
-        else if (data.color == "green")
-        {
-            imageColor.color = Color.green;
-        }
-    }*/
-
-    private void create(){
-        var document = new BsonDocument { { "username", data.username},{"FallosNivel1", 0},{"FallosNivel2", 0},{"FallosNivel3", 0},{"FallosNivel4", 0},{"FallosNivel5", 0}};
-        collection.InsertOne(document);
-    }
     private void SaveData()
     {
-        //var document = new BsonDocument { { "username", data.username ["username2", data.username]}};
         SaveLoadSystemData.SaveData(data, pathData, nameFileData);
-        //var json = new JavaScriptSerializer().Serialize(data);
-        //BsonDocument document = BsonDocument.Parse(datos);
-        var update = new BsonDocument { { "username", data.username},{"FallosNivel1", data.levelfail},{"FallosNivel2", data.levelfail2},{"FallosNivel3", data.levelfail3},{"FallosNivel4", data.levelfail4},{"FallosNivel5", data.levelfail5}};
-        var filU = "{username:{$eq:'" + data.username+"'}}";
-        collection.ReplaceOne(filU , update);
-        //db.collection.updateOne({username: data.username}, update);
+        
     }
 
 
