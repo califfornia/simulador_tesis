@@ -54,8 +54,8 @@ public class TestSave : MonoBehaviour
 	
 	public void SaveUserName(string s)
 	{
-		input = s;
-        if(!string.Equals(data.username,s)){
+		input = inpute.text;
+        if(!string.Equals(data.username,input)){
             data = new ExampleData();
             SaveData();
         }
