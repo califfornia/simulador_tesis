@@ -55,6 +55,10 @@ public class TestSave : MonoBehaviour
 	public void SaveUserName(string s)
 	{
 		input = s;
+        if(!string.Equals(data.username,s)){
+            data = new ExampleData();
+            SaveData();
+        }
 		Debug.Log (input);
 		data.username = input;
         var document = new BsonDocument { { "username",input},{"FallosNivel1", 0},{"FallosNivel2", 0},{"FallosNivel3", 0},{"FallosNivel4", 0},{"FallosNivel5", 0}};
