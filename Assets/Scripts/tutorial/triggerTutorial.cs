@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class triggerTutorial : MonoBehaviour
 {
+	Distancia dist;
 	void OnTriggerEnter (Collider other)
 	{
 		Debug.Log ("entro");
@@ -19,7 +20,10 @@ public class triggerTutorial : MonoBehaviour
 		{
 			if (Input.GetKeyDown(KeyCode.F))
 			{
-            SceneManager.LoadScene("tutorialpass");
+				dist = FindObjectOfType<Distancia>();
+				dist.Guardar(1f);
+				SceneManager.LoadScene("tutorialpass");
+
 			}
 		}
 		

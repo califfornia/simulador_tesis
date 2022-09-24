@@ -25,18 +25,21 @@ public class TestSave : MonoBehaviour
 	public Button repetir;
 	public InputField inpute;
 	private string input;
-
     public ExampleData data;
+    Distancia dist;
+    public float percent;
 
     public const string pathData = "Data/test";
     public const string nameFileData = "ExampleData";
+ 
 
     private void Start()
     {
         //-------------------
         db = client.GetDatabase(DATABASE_NAME);
         collection = db.GetCollection<BsonDocument>("intentos");
-    
+        dist = FindObjectOfType<Distancia>();
+        Debug.Log(dist.Porcentaje);
         //--------------
         var dataFound = SaveLoadSystemData.LoadData<ExampleData>(pathData, nameFileData);
         if (dataFound != null)
@@ -52,9 +55,9 @@ public class TestSave : MonoBehaviour
     }
 
 	
-	public void SaveUserName(string s)
+	public void SaveUserName(Text s)
 	{
-		input = inpute.text;
+		input = s.text;
         if(!string.Equals(data.username,input)){
             data = new ExampleData();
             SaveData();
