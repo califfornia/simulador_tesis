@@ -38,8 +38,7 @@ public class TestSave : MonoBehaviour
         //-------------------
         db = client.GetDatabase(DATABASE_NAME);
         collection = db.GetCollection<BsonDocument>("intentos");
-        dist = FindObjectOfType<Distancia>();
-        Debug.Log(dist.Porcentaje);
+
         //--------------
         var dataFound = SaveLoadSystemData.LoadData<ExampleData>(pathData, nameFileData);
         if (dataFound != null)
@@ -64,7 +63,7 @@ public class TestSave : MonoBehaviour
         }
 		Debug.Log (input);
 		data.username = input;
-        var document = new BsonDocument { { "username",input},{"FallosNivel1", 0},{"FallosNivel2", 0},{"FallosNivel3", 0},{"FallosNivel4", 0},{"FallosNivel5", 0}};
+        var document = new BsonDocument { { "username",input},{"Puntuacion Nivel1", 0},{"FallosNivel1", 0},{"FallosNivel2", 0},{"FallosNivel3", 0},{"FallosNivel4", 0},{"FallosNivel5", 0}};
         collection.InsertOne(document);
         //var filter = Builders<BsonDocument>.Filter.Eq("username", " ");
         //var update = Builders<BsonDocument>.Update.Set("username", data.username);
@@ -83,7 +82,20 @@ public class TestSave : MonoBehaviour
         var update = Builders<BsonDocument>.Update.Set("FallosNivel1", data.levelfail);
         collection.UpdateOne(filter, update);
 		Debug.Log("guardo");
+		SaveData();
+	}
+    	public void LevelPercent()
+	{   
 
+		
+
+        dist = FindObjectOfType<Distancia>();
+        data.porcentaje1=dist.Porcentaje;
+        Debug.Log(dist.Porcentaje);
+        var filter = Builders<BsonDocument>.Filter.Eq("username", data.username);
+        var update = Builders<BsonDocument>.Update.Set("Puntuacion Nivel1", data.porcentaje1*100);
+        collection.UpdateOne(filter, update);
+		Debug.Log("guardo");
 		SaveData();
 	}
 	
@@ -93,6 +105,7 @@ public class TestSave : MonoBehaviour
         var filter = Builders<BsonDocument>.Filter.Eq("username", data.username);
         var update = Builders<BsonDocument>.Update.Set("FallosNivel2", data.levelfail2);
         collection.UpdateOne(filter, update);
+        
 		Debug.Log("guardo");
 		SaveData();
 	}
