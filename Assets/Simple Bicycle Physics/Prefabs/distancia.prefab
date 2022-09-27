@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6723062608426632528}
-  - component: {fileID: 5567316692268976338}
+  - component: {fileID: 418603206559757633}
   m_Layer: 0
   m_Name: distancia
   m_TagString: Untagged
@@ -25,13 +25,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 258942125553331025}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -287.71567, y: 71.460434, z: 11.388471}
+  m_LocalPosition: {x: -312.07968, y: 70.55054, z: 13.35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5567316692268976338
+--- !u!114 &418603206559757633
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -43,3 +43,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62692bec87b07234cad8d8d6ea06f833, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Porcentaje: 0

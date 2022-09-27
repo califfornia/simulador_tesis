@@ -1642,10 +1642,15 @@ MonoBehaviour:
     color: 
     username: 
     levelfail: 0
+    porcentaje1: 0
     levelfail2: 0
+    porcentaje2: 0
     levelfail3: 0
+    porcentaje3: 0
     levelfail4: 0
+    porcentaje4: 0
     levelfail5: 0
+    porcentaje5: 0
   percent: 0
 --- !u!4 &1980382409
 Transform:
