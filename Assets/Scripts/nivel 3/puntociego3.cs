@@ -23,7 +23,7 @@ public class puntociego3 : MonoBehaviour
 		Debug.DrawRay(ray.origin, ray.direction * 10, Color.yellow);
 		if (other.tag == "Player") 
 		{
-			if (Input.GetKeyDown(KeyCode.F))
+			if (Input.GetKeyDown(KeyCode.F)||Input.GetButtonDown("Submit"))
 			{
 				SceneManager.LoadScene("nivelfail3");
 			}

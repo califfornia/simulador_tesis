@@ -17,7 +17,7 @@ public class triggerTutorial : MonoBehaviour
 		Debug.Log ("esta pasando");
 		if (other.tag == "Player") 
 		{
-			if (Input.GetKeyDown(KeyCode.F))
+			if (Input.GetKeyDown(KeyCode.F)||Input.GetButtonDown("Submit"))
 			{
 				SceneManager.LoadScene("tutorialpass");
 

@@ -14,61 +14,61 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/instrucciones.unity
     guid: fb95e88fa86741e49b2a0babfed3103f
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/nivelTutorial.unity
     guid: 53b5976238cd72247bd6423adbb423c4
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/tutorialpass.unity
     guid: b108f81c3c2a53d4ba3204fa18464deb
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/DemoScene.unity
     guid: 7759de288f5d4ee449a0ca5e2244944a
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/nivelpass.unity
     guid: 35ce4a05edce6854fb7691cc4a71ff22
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/nivelfail2.unity
     guid: 92b7330f579eba540a8b276e2786c18d
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/simcompletado.unity
     guid: cc770160310c4bd4abefac48ddc328ec
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/nivel5pass.unity
     guid: 0ecf3aac6caf8ac4b859d9d2238d2b9f
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/nivel4pass.unity
     guid: eb2d4e29668947f489138714aa3f0131
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/nivelfail3.unity
     guid: d675696f10fc99a4aa01e2b2e2f7e243
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/nivelfail.unity
     guid: 8641c852789811b40899e16a61c86acb
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/nivel3pass.unity
     guid: 19c2f24d557993846b14cb3d989129fc
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/camionlevel.unity
     guid: 27f0e0f91f83398498adadb3dd959173
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/nivel2pass.unity
     guid: 51cb1d2384b6078449e27c7eeac9d2bf
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/nivelfail4.unity
     guid: 56aafdb2fdfd1944d8069f895c3e640e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/nivelfail5.unity
     guid: 626a1c1d01ff33241adba376e016230e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/movbuslevel.unity
     guid: fd2e09fa14b33214c9e54c294556b765
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/carlevel.unity
     guid: 149724dac8a816d4d84388721df201d9
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/movcarlevel.unity
     guid: 0a0bc0feebba7464f991a8865e16c2d3
   m_configObjects:

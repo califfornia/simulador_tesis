@@ -1,9 +1,7 @@
 ﻿[System.Serializable]
 public class ExampleData
 {
-    public int level;
-    public float exp;
-    public string color;
+    public string Boton;
 	
 	public string username;
 	public int levelfail;

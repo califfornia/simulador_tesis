@@ -30,7 +30,7 @@ public class nivel3pass : MonoBehaviour
 		Debug.Log(puntociego2.GetComponent<Collider>().Raycast(ray, out hit, 100f));
 		if (other.tag == "Player") 
 		{
-			if (Input.GetKeyDown(KeyCode.F))
+			if (Input.GetKeyDown(KeyCode.F)||Input.GetButtonDown("Submit"))
 			{
 				Debug.Log("Primer if");
 

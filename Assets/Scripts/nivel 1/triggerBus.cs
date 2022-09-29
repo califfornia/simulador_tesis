@@ -26,7 +26,7 @@ public class triggerBus : MonoBehaviour
 
 		if (other.tag == "Player") 
 		{
-			if (Input.GetKeyDown(KeyCode.F))
+			if (Input.GetKeyDown(KeyCode.F)||Input.GetButtonDown("Submit"))
 			{
 
 				dist = FindObjectOfType<Distancia>();

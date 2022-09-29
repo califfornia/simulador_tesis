@@ -24,7 +24,7 @@ public class nivel2pass : MonoBehaviour
 		Debug.DrawRay(ray.origin, ray.direction * 10, Color.yellow);
 		if (other.tag == "Player") 
 		{
-			if (Input.GetKeyDown(KeyCode.F))
+			if (Input.GetKeyDown(KeyCode.F)||Input.GetButtonDown("Submit"))
 			{
 				dist = FindObjectOfType<Distancia>();
 				if (puntociego1.GetComponent<Collider>().Raycast(ray, out hit, 100f) || puntociego2.GetComponent<Collider>().Raycast(ray, out hit, 6f)|| puntociego3.GetComponent<Collider>().Raycast(ray, out hit, 6f))

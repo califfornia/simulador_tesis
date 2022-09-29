@@ -17,7 +17,7 @@ public class puntociego: MonoBehaviour
 		Debug.Log ("punto ciego");
 		if (other.tag == "Player") 
 		{
-			if (Input.GetKeyDown(KeyCode.F))
+			if (Input.GetKeyDown(KeyCode.F)||Input.GetButtonDown("Submit"))
 			{
 				Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             	RaycastHit hit;
