@@ -22,8 +22,9 @@ public class ControlPass4 : MonoBehaviour
         {
       
             Debug.Log("Submit");
-            input.LevelPercent4();
             Cambiador.LoadScene (escena);
+            input.LevelPercent4();
+           
             // Fire !!
         }
         

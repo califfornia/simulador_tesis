@@ -19,11 +19,11 @@ public class ControlFail2 : MonoBehaviour
     void Update()
     {
         if(Input.GetButtonDown("Submit"))
-        {
-      
+        {      
             Debug.Log("Submit");
-            input.LevelFail2();
             Cambiador.LoadScene (escena);
+            input.LevelFail2();
+
             // Fire !!
         }
         

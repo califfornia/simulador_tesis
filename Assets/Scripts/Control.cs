@@ -26,12 +26,13 @@ public class Control : MonoBehaviour
         {
             Debug.Log("Fire2");
             // Fire !!
+            //Cambiador.LoadScene (escena);
         }
         if(Input.GetButtonDown("Fire3"))
         {
             Debug.Log("Fire3");
             // Fire !!
-            Cambiador.LoadScene (escena);
+            
         }
         if(Input.GetButtonDown("Jump"))
         {
@@ -42,7 +43,7 @@ public class Control : MonoBehaviour
         if(Input.GetButtonDown("Submit"))
         {
             Debug.Log("Submit");
-            //Cambiador.LoadScene (escena);
+            Cambiador.LoadScene (escena);
             // Fire !!
         }
         if(Input.GetButtonDown("Cancel"))
