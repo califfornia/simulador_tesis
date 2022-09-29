@@ -22,8 +22,9 @@ public class ControlFail4 : MonoBehaviour
         {
       
             Debug.Log("Submit");
-            input.LevelFail4();
             Cambiador.LoadScene (escena);
+            input.LevelFail4();
+
             // Fire !!
         }
         

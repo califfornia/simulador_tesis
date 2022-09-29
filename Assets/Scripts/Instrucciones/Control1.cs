@@ -6,7 +6,9 @@ using UnityEngine.UI;
 public class Control1 : MonoBehaviour
 {
     public GameObject botonInput;
+    public GameObject botonInput2;
     botonManager Cambiador;
+    cambioEscenas manager;
     TestSave input;
     public string escena;
     public Text name;
@@ -14,6 +16,7 @@ public class Control1 : MonoBehaviour
     void Start()
     {
         Cambiador = FindObjectOfType<botonManager>();
+        manager = FindObjectOfType<cambioEscenas>();
         input = FindObjectOfType<TestSave>();
         
     }
@@ -27,10 +30,11 @@ public class Control1 : MonoBehaviour
             if(botonInput.activeSelf){
                 Cambiador.InputName();
             }
-            else{
+            else if (botonInput2.activeSelf){
             Debug.Log("Submit");
+            manager.LoadScene (escena);
             input.SaveUserName(name);
-            Cambiador.LoadScene (escena);
+
 
             }
 

@@ -28,6 +28,7 @@ public class ControlPass3 : MonoBehaviour
             }
             else{
             Debug.Log("Submit");
+            Cambiador.LoadScene (escena);
             input.LevelPercent3();
             Cambiador.LoadScene (escena);
 

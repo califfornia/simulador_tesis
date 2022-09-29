@@ -22,8 +22,9 @@ public class Control2 : MonoBehaviour
         {
       
             Debug.Log("Submit");
-            input.LevelPercent();
             Cambiador.LoadScene (escena);
+            input.LevelPercent();
+
             // Fire !!
         }
         
