@@ -6,6 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class triggerTutorial : MonoBehaviour
 {
+	public GameObject señal;
+	
+	void Start()
+	{		
+		señal.SetActive(false);
+	}
 	void OnTriggerEnter (Collider other)
 	{
 		Debug.Log ("entro");
@@ -17,6 +23,7 @@ public class triggerTutorial : MonoBehaviour
 		Debug.Log ("esta pasando");
 		if (other.tag == "Player") 
 		{
+			señal.SetActive(true);
 			if (Input.GetKeyDown(KeyCode.F))
 			{
             SceneManager.LoadScene("tutorialpass");
