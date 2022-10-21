@@ -1394,6 +1394,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
+  isAirborne: 0
   hipIK: {fileID: 4526251077819520552}
   chestIK: {fileID: 4526251078015732191}
   leftFootIK: {fileID: 4526251078492292463}
@@ -1770,6 +1771,9 @@ MonoBehaviour:
   oscillationAmount: 3
   oscillationAffectSteerRatio: 0.1
   cycleOscillation: 0
+  rb: {fileID: 0}
+  fWheelRb: {fileID: 0}
+  rWheelRb: {fileID: 0}
   crankSpeed: 0
   crankCurrentQuat: 0
   crankLastQuat: 0
@@ -1802,6 +1806,11 @@ MonoBehaviour:
     movementInstructionSet: []
     sprintInstructionSet: 
     bHopInstructionSet: 
+  airTimeSettings:
+    freestyle: 0
+    airTimeRotationSensitivity: 0
+    heightThreshold: 0
+    groundSnapSensitivity: 0
 --- !u!1 &3791339719506743959
 GameObject:
   m_ObjectHideFlags: 0

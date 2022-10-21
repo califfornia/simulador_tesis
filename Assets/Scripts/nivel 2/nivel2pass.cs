@@ -27,7 +27,7 @@ public class nivel2pass : MonoBehaviour
 			if (Input.GetKeyDown(KeyCode.F)||Input.GetButtonDown("Submit"))
 			{
 				dist = FindObjectOfType<Distancia>();
-				if (puntociego1.GetComponent<Collider>().Raycast(ray, out hit, 100f) || puntociego2.GetComponent<Collider>().Raycast(ray, out hit, 6f)|| puntociego3.GetComponent<Collider>().Raycast(ray, out hit, 6f))
+				if (puntociego1.GetComponent<Collider>().Raycast(ray, out hit, 100f) || puntociego2.GetComponent<Collider>().Raycast(ray, out hit, 100f)|| puntociego3.GetComponent<Collider>().Raycast(ray, out hit, 100f))
 				{
 					if(hit.distance > 6 ){
 						Acierto=1f;

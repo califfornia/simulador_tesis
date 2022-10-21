@@ -12,13 +12,14 @@ public class TestSave : MonoBehaviour
 {
     /*public TextMeshProUGUI levelText;
     public TextMeshProUGUI expText;
-    public Image imageColor;*/
+    public Image imageColor;
     //mongodb
     private const string MONGO_URI = "mongodb+srv://LuisFeGomez:Simulador2022@cluster0.2jlef.mongodb.net/?retryWrites=true&w=majority";
     private const string DATABASE_NAME = "Simulador";
     private MongoClient client = new MongoClient(MONGO_URI);
     private IMongoDatabase db;
     private IMongoCollection<BsonDocument> collection;
+    */
     //-------------
 
 
@@ -36,8 +37,8 @@ public class TestSave : MonoBehaviour
     private void Start()
     {
         //-------------------
-        db = client.GetDatabase(DATABASE_NAME);
-        collection = db.GetCollection<BsonDocument>("intentos");
+        //db = client.GetDatabase(DATABASE_NAME);
+        //collection = db.GetCollection<BsonDocument>("intentos");
 
         //--------------
         var dataFound = SaveLoadSystemData.LoadData<ExampleData>(pathData, nameFileData);
@@ -63,24 +64,25 @@ public class TestSave : MonoBehaviour
         }
 		Debug.Log (input);
 		data.username = input;
-        var document = new BsonDocument { { "username",input},{"Puntuacion Nivel1", 0},{"FallosNivel1", 0},{"Puntuacion Nivel2", 0},{"FallosNivel2", 0},{"Puntuacion Nivel3", 0},{"FallosNivel3", 0},{"Puntuacion Nivel4", 0},{"FallosNivel4", 0},{"Puntuacion Nivel5", 0},{"FallosNivel5", 0}};
-        collection.InsertOne(document);
+        SaveData();
+        //var document = new BsonDocument { { "username",input},{"Puntuacion Nivel1", 0},{"FallosNivel1", 0},{"Puntuacion Nivel2", 0},{"FallosNivel2", 0},{"Puntuacion Nivel3", 0},{"FallosNivel3", 0},{"Puntuacion Nivel4", 0},{"FallosNivel4", 0},{"Puntuacion Nivel5", 0},{"FallosNivel5", 0}};
+        //collection.InsertOne(document);
         //var filter = Builders<BsonDocument>.Filter.Eq("username", " ");
         //var update = Builders<BsonDocument>.Update.Set("username", data.username);
         //collection.UpdateOne(filter, update);
 
         //
 		
-        SaveData();
+
 	}
 	
 	public void LevelFail()
 	{   
 
 		data.levelfail++;
-        var filter = Builders<BsonDocument>.Filter.Eq("username", data.username);
-        var update = Builders<BsonDocument>.Update.Set("FallosNivel1", data.levelfail);
-        collection.UpdateOne(filter, update);
+        //var filter = Builders<BsonDocument>.Filter.Eq("username", data.username);
+        //var update = Builders<BsonDocument>.Update.Set("FallosNivel1", data.levelfail);
+        //collection.UpdateOne(filter, update);
 		Debug.Log("guardo");
 		SaveData();
 	}
@@ -92,9 +94,9 @@ public class TestSave : MonoBehaviour
         dist = FindObjectOfType<Distancia>();
         data.porcentaje1=dist.Porcentaje;
         Debug.Log(dist.Porcentaje);
-        var filter = Builders<BsonDocument>.Filter.Eq("username", data.username);
-        var update = Builders<BsonDocument>.Update.Set("Puntuacion Nivel1", data.porcentaje1*100);
-        collection.UpdateOne(filter, update);
+        //var filter = Builders<BsonDocument>.Filter.Eq("username", data.username);
+        //var update = Builders<BsonDocument>.Update.Set("Puntuacion Nivel1", data.porcentaje1*100);
+        //collection.UpdateOne(filter, update);
 		Debug.Log("guardo");
 		SaveData();
 	}
@@ -102,9 +104,9 @@ public class TestSave : MonoBehaviour
 	public void LevelFail2()
 	{
 		data.levelfail2++;
-        var filter = Builders<BsonDocument>.Filter.Eq("username", data.username);
-        var update = Builders<BsonDocument>.Update.Set("FallosNivel2", data.levelfail2);
-        collection.UpdateOne(filter, update);
+        //var filter = Builders<BsonDocument>.Filter.Eq("username", data.username);
+        //var update = Builders<BsonDocument>.Update.Set("FallosNivel2", data.levelfail2);
+        //collection.UpdateOne(filter, update);
         
 		Debug.Log("guardo");
 		SaveData();
@@ -114,18 +116,18 @@ public class TestSave : MonoBehaviour
         dist = FindObjectOfType<Distancia>();
         data.porcentaje2=dist.Porcentaje;
         Debug.Log(dist.Porcentaje);
-        var filter = Builders<BsonDocument>.Filter.Eq("username", data.username);
-        var update = Builders<BsonDocument>.Update.Set("Puntuacion Nivel2", data.porcentaje2*100);
-        collection.UpdateOne(filter, update);
+        //var filter = Builders<BsonDocument>.Filter.Eq("username", data.username);
+        //var update = Builders<BsonDocument>.Update.Set("Puntuacion Nivel2", data.porcentaje2*100);
+        //collection.UpdateOne(filter, update);
 		Debug.Log("guardo");
 		SaveData();
 	}
 	public void LevelFail3()
 	{
 		data.levelfail3++;
-        var filter = Builders<BsonDocument>.Filter.Eq("username", data.username);
-        var update = Builders<BsonDocument>.Update.Set("FallosNivel3", data.levelfail3);
-        collection.UpdateOne(filter, update);
+        //var filter = Builders<BsonDocument>.Filter.Eq("username", data.username);
+        //var update = Builders<BsonDocument>.Update.Set("FallosNivel3", data.levelfail3);
+        //collection.UpdateOne(filter, update);
 		Debug.Log("guardo");
 		SaveData();
 	}
@@ -134,18 +136,18 @@ public class TestSave : MonoBehaviour
         dist = FindObjectOfType<Distancia>();
         data.porcentaje3=dist.Porcentaje;
         Debug.Log(dist.Porcentaje);
-        var filter = Builders<BsonDocument>.Filter.Eq("username", data.username);
-        var update = Builders<BsonDocument>.Update.Set("Puntuacion Nivel3", data.porcentaje3*100);
-        collection.UpdateOne(filter, update);
+        //var filter = Builders<BsonDocument>.Filter.Eq("username", data.username);
+        //var update = Builders<BsonDocument>.Update.Set("Puntuacion Nivel3", data.porcentaje3*100);
+        //collection.UpdateOne(filter, update);
 		Debug.Log("guardo");
 		SaveData();
 	}
 	public void LevelFail4()
 	{
 		data.levelfail4++;
-        var filter = Builders<BsonDocument>.Filter.Eq("username", data.username);
-        var update = Builders<BsonDocument>.Update.Set("FallosNivel4", data.levelfail4);
-        collection.UpdateOne(filter, update);
+        //var filter = Builders<BsonDocument>.Filter.Eq("username", data.username);
+        //var update = Builders<BsonDocument>.Update.Set("FallosNivel4", data.levelfail4);
+        //collection.UpdateOne(filter, update);
 		Debug.Log("guardo");
 		SaveData();
 	}
@@ -154,9 +156,9 @@ public class TestSave : MonoBehaviour
         dist = FindObjectOfType<Distancia>();
         data.porcentaje4=dist.Porcentaje;
         Debug.Log(dist.Porcentaje);
-        var filter = Builders<BsonDocument>.Filter.Eq("username", data.username);
-        var update = Builders<BsonDocument>.Update.Set("Puntuacion Nivel4", data.porcentaje4*100);
-        collection.UpdateOne(filter, update);
+        //var filter = Builders<BsonDocument>.Filter.Eq("username", data.username);
+        //var update = Builders<BsonDocument>.Update.Set("Puntuacion Nivel4", data.porcentaje4*100);
+        //collection.UpdateOne(filter, update);
 		Debug.Log("guardo");
 		SaveData();
 	}
@@ -164,9 +166,9 @@ public class TestSave : MonoBehaviour
 	public void LevelFail5()
 	{
 		data.levelfail5++;
-        var filter = Builders<BsonDocument>.Filter.Eq("username", data.username);
-        var update = Builders<BsonDocument>.Update.Set("FallosNivel5", data.levelfail5);
-        collection.UpdateOne(filter, update);
+        //var filter = Builders<BsonDocument>.Filter.Eq("username", data.username);
+        //var update = Builders<BsonDocument>.Update.Set("FallosNivel5", data.levelfail5);
+        //collection.UpdateOne(filter, update);
 		Debug.Log("guardo");
 		SaveData();
 	}
@@ -175,9 +177,9 @@ public class TestSave : MonoBehaviour
         dist = FindObjectOfType<Distancia>();
         data.porcentaje5=dist.Porcentaje;
         Debug.Log(dist.Porcentaje);
-        var filter = Builders<BsonDocument>.Filter.Eq("username", data.username);
-        var update = Builders<BsonDocument>.Update.Set("Puntuacion Nivel5", data.porcentaje5*100);
-        collection.UpdateOne(filter, update);
+        //var filter = Builders<BsonDocument>.Filter.Eq("username", data.username);
+        //var update = Builders<BsonDocument>.Update.Set("Puntuacion Nivel5", data.porcentaje5*100);
+        //collection.UpdateOne(filter, update);
 		Debug.Log("guardo");
 		SaveData();
 	}

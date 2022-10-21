@@ -30,7 +30,7 @@ public class triggerBus : MonoBehaviour
 			{
 
 				dist = FindObjectOfType<Distancia>();
-				if (puntociego1.GetComponent<Collider>().Raycast(ray, out hit, 100f) || puntociego2.GetComponent<Collider>().Raycast(ray, out hit, 6f))
+				if (puntociego1.GetComponent<Collider>().Raycast(ray, out hit, 100f) || puntociego2.GetComponent<Collider>().Raycast(ray, out hit, 100f))
 				{
 					if(hit.distance > 6 ){
 						Acierto=1f;
