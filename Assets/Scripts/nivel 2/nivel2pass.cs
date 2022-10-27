@@ -72,5 +72,12 @@ public class nivel2pass : MonoBehaviour
 			}
 		}
 		
-	}	
+	}
+	    void Update()
+    {
+		if(Input.GetButtonDown("Cancel")){
+			SceneManager.LoadScene("DemoScene");
+		}
+
+	}		
 }

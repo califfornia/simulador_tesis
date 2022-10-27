@@ -82,4 +82,11 @@ public class nivel3pass : MonoBehaviour
 		}
 		
 	}	
+	void Update()
+    {
+		if(Input.GetButtonDown("Cancel")){
+			SceneManager.LoadScene("camionlevel");
+		}
+
+	}	
 }

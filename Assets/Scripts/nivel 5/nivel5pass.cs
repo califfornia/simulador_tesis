@@ -6,8 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class nivel5pass : MonoBehaviour
 {
-   public float cuentareg = 15;
+   public float cuentareg = 445;
    //public Text textoTimer;
+   public Image timer_radio_image;
 	Distancia dist;	
 	public float Acierto;
 	public GameObject puntociego1;
@@ -23,7 +24,7 @@ public class nivel5pass : MonoBehaviour
 	{
 		Debug.Log ("esta pasando");
 		cuentareg -= Time.deltaTime;
-
+		timer_radio_image.fillAmount = cuentareg/40;
 		//textoTimer.text = "" + cuentareg.ToString("f0");
 		if (other.tag == "Player") 
 		{
@@ -34,6 +35,7 @@ public class nivel5pass : MonoBehaviour
 			Debug.Log(Physics.Raycast(ray, out hit));
 			if (cuentareg <0)
 			{
+				timer_radio_image.fillAmount = 0;
 				dist = FindObjectOfType<Distancia>();
 				if (Physics.Raycast(ray, out hit))
 				{
@@ -91,5 +93,13 @@ public class nivel5pass : MonoBehaviour
             SceneManager.LoadScene("nivel2pass");
 			}*/
 				
-	}	
+	}
+	void Update()
+    {
+		if(Input.GetButtonDown("Cancel")){
+			SceneManager.LoadScene("movcarlevel");
+		}
+
+	}
+		
 }

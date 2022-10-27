@@ -9,6 +9,7 @@ public class nivel4pass : MonoBehaviour
    public float cuentareg = 15;
    //public Text textoTimer;
 	Distancia dist;	
+	public Image timer_radio_image;
 	public float Acierto;
 	public GameObject puntociego1;
 	public GameObject puntociego2;
@@ -23,9 +24,11 @@ public class nivel4pass : MonoBehaviour
 	{
 		Debug.Log ("esta pasando");
 		cuentareg -= Time.deltaTime;
+		
 		//textoTimer.text = "" + cuentareg.ToString("f0");
 		if (other.tag == "Player") 
 		{
+			timer_radio_image.fillAmount = cuentareg/40;
 			Debug.Log ("esta pasando");
 			Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
 			RaycastHit hit;
@@ -34,6 +37,7 @@ public class nivel4pass : MonoBehaviour
 			Debug.Log(Physics.Raycast(ray, out hit));
 			if (cuentareg <0)
 			{
+				timer_radio_image.fillAmount = 0;
 				dist = FindObjectOfType<Distancia>();
 				if (Physics.Raycast(ray, out hit))
 				{
@@ -91,5 +95,12 @@ public class nivel4pass : MonoBehaviour
             SceneManager.LoadScene("nivel2pass");
 			}*/
 				
+	}
+		void Update()
+    {
+		if(Input.GetButtonDown("Cancel")){
+			SceneManager.LoadScene("movbuslevel");
+		}
+
 	}	
 }

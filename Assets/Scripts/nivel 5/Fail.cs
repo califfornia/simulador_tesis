@@ -8,7 +8,9 @@ public class Fail : MonoBehaviour
 {   //public Text textoTimer;
    void OnTriggerEnter (Collider other)
 	{
-		SceneManager.LoadScene("nivelfail4");
-		
+		if (other.tag == "Player") 
+		{
+			SceneManager.LoadScene("nivelfail5");
+		}		
 	}	
 }

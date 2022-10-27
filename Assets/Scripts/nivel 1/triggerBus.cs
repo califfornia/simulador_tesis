@@ -75,5 +75,14 @@ public class triggerBus : MonoBehaviour
 			}
 		}
 		
+	}
+
+	
+    void Update()
+    {
+		if(Input.GetButtonDown("Cancel")){
+			SceneManager.LoadScene("carlevel");
+		}
+
 	}	
 }
