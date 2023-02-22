@@ -10,6 +10,7 @@ public class triggerBus : MonoBehaviour
 	public float Acierto;
 	public GameObject puntociego1;
 	public GameObject puntociego2;
+	public GameObject player;
 	void OnTriggerEnter (Collider other)
 	{
 		Debug.Log ("entro");
@@ -26,6 +27,7 @@ public class triggerBus : MonoBehaviour
 
 		if (other.tag == "Player") 
 		{
+			Debug.Log("si entra");
 			if (Input.GetKeyDown(KeyCode.F)||Input.GetButtonDown("Submit"))
 			{
 

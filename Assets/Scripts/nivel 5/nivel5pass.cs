@@ -22,12 +22,13 @@ public class nivel5pass : MonoBehaviour
 	
 	void OnTriggerStay (Collider other)
 	{
-		Debug.Log ("esta pasando");
-		cuentareg -= Time.deltaTime;
-		timer_radio_image.fillAmount = cuentareg/40;
+
 		//textoTimer.text = "" + cuentareg.ToString("f0");
 		if (other.tag == "Player") 
 		{
+			Debug.Log ("esta pasando");
+			cuentareg -= Time.deltaTime;
+			timer_radio_image.fillAmount = cuentareg/40;
 			
 			Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
 			RaycastHit hit;
@@ -80,7 +81,7 @@ public class nivel5pass : MonoBehaviour
 					//transform.position = ray.GetPoint(100.0f);
 				}
 			
-				SceneManager.LoadScene("simcompletado");
+				SceneManager.LoadScene("nivel4pass");
 				
 			}
 

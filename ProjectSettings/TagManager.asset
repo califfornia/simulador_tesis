@@ -6,6 +6,7 @@ TagManager:
   tags:
   - cruce
   - TrafficLight
+  - Cicla
   layers:
   - Default
   - TransparentFX

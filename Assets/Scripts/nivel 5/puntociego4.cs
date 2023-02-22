@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class puntociego4 : MonoBehaviour
 {
-     public float cuentareg = 15;
+	public float cuentareg2 = 60;
    //public Text textoTimer;
    void OnTriggerEnter (Collider other)
 	{
@@ -15,20 +15,23 @@ public class puntociego4 : MonoBehaviour
 	
 	void OnTriggerStay (Collider other)
 	{
-		Debug.Log ("punto ciego");
-		cuentareg -= Time.deltaTime;
+
 		//textoTimer.text = "" + cuentareg.ToString("f0");
 		if (other.tag == "Player") 
 		{
-			if (cuentareg <0)
+			Debug.Log ("punto ciego");
+			cuentareg2 -= Time.deltaTime;
+			if (cuentareg2 <0)
 			{
 			
 				SceneManager.LoadScene("nivelfail5");
 				
 			}
+
 			
 			//timer.SetActive(true);
 		}
+
 		
 	}	
 }
