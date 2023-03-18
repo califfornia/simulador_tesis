@@ -10,6 +10,7 @@ public class BicycleVehicle : MonoBehaviour
 	public Transform handle;
 	bool braking;
 	Rigidbody rb;
+	
 
 	public Vector3 COG;
 
@@ -39,10 +40,12 @@ public class BicycleVehicle : MonoBehaviour
 
 	public bool frontGrounded;
 	public bool rearGrounded;
-
+	public Transform cam;
+	float camRotation;
 	// Start is called before the first frame update
 	void Start()
 	{
+		camRotation = 0;
 		StopEmitTrail();
 		rb = GetComponent<Rigidbody>();		
 	}
@@ -62,7 +65,11 @@ public class BicycleVehicle : MonoBehaviour
 
 	public void GetInput()
 	{
-		horizontalInput = Input.GetAxis("Horizontal");
+		
+		camRotation = Mathf.Repeat(cam.transform.rotation.eulerAngles.z + 15f, 30f) - 15f;
+		float camRotationNormalized = camRotation / 15f;
+		Debug.Log(Mathf.Clamp(camRotation, -1f, 1f));
+		horizontalInput = -Mathf.Clamp(camRotation, -1f, 1f);
 		vereticallInput = Input.GetAxis("Vertical");
 		braking = Input.GetKey(KeyCode.Space);
 	}

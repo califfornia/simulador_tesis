@@ -56,9 +56,9 @@ MonoBehaviour:
   brakeForce: 55
   currentSteeringAngle: 0
   speedteercontrolTime: 0.0309
-  maxSteeringAngle: 30
+  maxSteeringAngle: 10
   turnSmoothing: 0.05
-  maxlayingAngle: 42
+  maxlayingAngle: 0
   targetlayingAngle: -0
   layingammount: -20.4
   leanSmoothing: 0.03
@@ -70,6 +70,7 @@ MonoBehaviour:
   rearttrail: {fileID: 6464223977495500639}
   frontGrounded: 0
   rearGrounded: 0
+  cam: {fileID: 1037171054248851910}
 --- !u!54 &641875120207309208
 Rigidbody:
   m_ObjectHideFlags: 0
