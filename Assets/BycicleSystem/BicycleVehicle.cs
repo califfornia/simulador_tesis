@@ -66,10 +66,10 @@ public class BicycleVehicle : MonoBehaviour
 	public void GetInput()
 	{
 		
-		camRotation = Mathf.Repeat(cam.transform.rotation.eulerAngles.z + 15f, 30f) - 15f;
-		float camRotationNormalized = camRotation / 15f;
+		camRotation = Mathf.Repeat(cam.transform.rotation.eulerAngles.z + 5f, 10f) - 5f;
+		float camRotationNormalized = camRotation / 5f;
 		Debug.Log(Mathf.Clamp(camRotation, -1f, 1f));
-		horizontalInput = -Mathf.Clamp(camRotation, -1f, 1f);
+		horizontalInput = Input.GetAxis("Horizontal");
 		vereticallInput = Input.GetAxis("Vertical");
 		braking = Input.GetKey(KeyCode.Space);
 	}
